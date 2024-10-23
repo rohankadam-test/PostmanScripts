@@ -1,0 +1,1000 @@
+{
+	"info": {
+		"_postman_id": "a4c63180-ddce-4a89-a65b-d52292286762",
+		"name": "ivNextGen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36423258"
+	},
+	"item": [
+		{
+			"name": "Positive",
+			"item": [
+				{
+					"name": "User_Manegement",
+					"item": [
+						{
+							"name": "Create admin User or Register admin User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"admin\",  \n  \t\"password\": \"admin\",\n    \"emailID\": \"rohan.kadam@intelli-vision.com\",\n    \"userType\": \"admin\",\n    \"profilePicture\": {{profilepicture}}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"admin\",  \n  \t\"password\": \"admin\",\n    \"janusClient\":\"xhcnGdj\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/login",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Regular User or Register Regular User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"regular\",  \n  \t\"password\": \"regular\",\n    \"emailID\": \"rohan.kadam@intelli-vision.com\",\n    \"userType\": \"regular\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All User Info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Specific User Info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user/{{userID}}",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user",
+										"{{userID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Regular User Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"regular\",  \n  \t\"password\": \"regular\",\n    \"janusClient\":\"xhcnGdj\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/login",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify user password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \t\"newPassword\":\"12345\",\n  \t\"oldPassword\" : \"regular\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user/{{userID}}",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user",
+										"{{userID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Login after password change",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"admin\",  \n  \t\"password\": \"12345\",\n    \"janusClient\":\"xhcnGdj\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/login",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Specific user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/user/{{userID}}",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"user",
+										"{{userID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Admin Count",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/adminCount",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"adminCount"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "License",
+					"item": [
+						{
+							"name": "Set VDC License",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{VDCLicenseKey}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set FR License key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{FRLicenseKey}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set IV License key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{IVLicenseKey}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update VDC License key",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{VDCLK}}\",\n\"analytics\":  \"vdc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update FR License key",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{FRLK}}\",\n\"analytics\":  \"fr\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update IV License key",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{IVLK}}\",\n\"analytics\":  \"va\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get License",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"licenseKey\": \"{{IVLK}}\",\n\"analytics\":  \"va\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/license",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"license"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Disk Cleanup",
+					"item": [
+						{
+							"name": "Admin Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \t\"userName\": \"admin\",  \n  \t\"password\": \"admin\",\n    \"janusClient\":\"xhcnGdj\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/login",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Disk Cleanup info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/diskCleanup",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"diskCleanup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Channels",
+					"item": [
+						{
+							"name": "Add VDC Clip Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": false,\n  \"fr\": false,\n  \"vdc\": true\n},\n  \"name\": \"VDCCam01\",\n  \"url\": \"{{ClipPath}}\",\n  \"type\": \"video/mp4\",\n  \"enableNatTypeTCP\": true,\n  \"repeatMode\": true,  \n   \"processingDetails\": {\n       \"mode\": 1,\n        \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add IV Clip Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": true,\n  \"fr\": false,\n  \"vdc\": false\n},\n  \"name\": \"IVCam01\",\n  \"url\": \"{{IVClipPath}}\",\n  \"type\": \"video/mp4\",\n  \"enableNatTypeTCP\": true,\n  \"repeatMode\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add FR Clip Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": false,\n  \"fr\": true,\n  \"vdc\": false\n},\n  \"name\": \"IVCam01\",\n  \"url\": \"{{FRClipPath}}\",\n  \"type\": \"video/mp4\",\n  \"enableNatTypeTCP\": true,\n  \"repeatMode\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Enable all analytics for clip",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": true,\n  \"fr\": true,\n  \"vdc\": true\n},\n  \"name\": \"AllEnabledClip\",\n  \"url\": \"{{FRClipPath}}\",\n  \"type\": \"video/mp4\",\n  \"enableNatTypeTCP\": true,\n  \"repeatMode\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add FR rtsp camera Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": false,\n  \"fr\": true,\n  \"vdc\": false\n},\n  \"name\": \"IVCam01\",\n  \"url\": \"{{FRrtspURL}}\",\n  \"type\": \"application/x-rtsp\",\n  \"enableNatTypeTCP\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add VDC rtsp camera Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": false,\n  \"fr\": false,\n  \"vdc\": true\n},\n  \"name\": \"IVCam01\",\n  \"url\": \"{{VDCrtspURL}}\",\n  \"type\": \"application/x-rtsp\",\n  \"enableNatTypeTCP\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add IV rtsp Channel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": true,\n  \"fr\": false,\n  \"vdc\": false\n},\n  \"name\": \"IVCam01\",\n  \"url\": \"{{IVClipPath}}\",\n  \"type\": \"video/mp4\",\n  \"enableNatTypeTCP\": true,\n  \"repeatMode\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All analytics enabled on RTSP stream",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"analytics\": {\n  \"va\": true,\n  \"fr\": true,\n  \"vdc\": true\n},\n  \"name\": \"AllEnabledStream\",\n  \"url\": \"{{VDCrtspURL}}\",\n  \"type\": \"application/x-rtsp\",\n  \"enableNatTypeTCP\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   }\n   }\n   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Camera Settings",
+					"item": [
+						{
+							"name": "Update FR RTSP channel Settings",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"analytics\": {\n    \"va\": false,\n    \"fr\": true,\n    \"vdc\": false\n  },\n  \"name\": \"FRUpdatedName\",\n  \"url\": \"{{VDCrtspURL}}\",\n  \"type\": \"application/x-rtsp\",\n  \"enableNatTypeTCP\": true,  \n   \"processingDetails\": {\n              \"fps\": 15,\n        \"resolution\": 1\n   },\n   \"analyticsOptions\": {\n    \n    \"fr\": {\n      \"generalSettings\": {\n        \"enableNameWithBbox\": true,\n        \"enableBbox\": true,\n        \"enableFaceMaskDetection\": true,\n        \"enableAgeDetection\": false,\n        \"enableGenderDetection\": false,\n        \"faceSize\": {\n          \"minimumFaceSize\": 3,\n          \"maximumFaceSize\": 100\n        },\n        \"recognition\": {\n          \"threshold\": 45\n        }\n      },\n      \"advancedSettings\": {\n         \"detection\": {\n           \"threshold\": 0.2,\n           \"minimumTime\": 0.1\n        },\n        \"tracking\": {\n           \"maxLostFaceTrackTime\": 1,\n           \"minSameTrackMatchConfidence\": false\n           \n        }\n       \n     }\n    }\n    }\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{serverip}}:1500/iva/channel/{channelId}",
+									"protocol": "http",
+									"host": [
+										"{{serverip}}"
+									],
+									"port": "1500",
+									"path": [
+										"iva",
+										"channel",
+										"{channelId}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "serverip",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "profilepicture",
+			"value": "/home/rohank/Pictures/srk.jpeg",
+			"type": "string"
+		},
+		{
+			"key": "userID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "VDCLicenseKey",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "IVLicenseKey",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "FRLicenseKey",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "VDCLK",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "FRLK",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "IVLK",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "camurl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "VDCClipPath",
+			"value": "/home/rohank/Desktop/VDC/TestData/Speed/Trip1080P.mp4",
+			"type": "string"
+		},
+		{
+			"key": "IVClipPath",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "FRClipPath",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "VDCrtspURL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "IVrtspURL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "FRrtspURL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
